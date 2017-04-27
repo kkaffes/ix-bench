@@ -234,10 +234,10 @@ def mutilate_benchmark(proc_manager, clients, cmdline, connections, threads, rec
   agents = ','.join([c._hostname for c in clients][1:])
 
   common_cmdline = '/tmp/'+getpass.getuser()+'/mutilate --binary --records=%d %s' % (records, cmdline)
-  #load_cmdline = common_cmdline + ' --loadonly'
+  load_cmdline = common_cmdline + ' --loadonly'
   bench_cmdline = 'timeout 600 ' + common_cmdline + ' --noload --threads=1 --depth=%d --measure_depth=1 --connections=%d --measure_connections=%d --measure_qps=%d --agent=%s --time=%d' % (depth, connections_per_thread, latency_connections, latency_qps, agents, time)
 
-  #clients[0].run(shlex.split(load_cmdline))
+  clients[0].run(shlex.split(load_cmdline))
 
   for c in clients[1:]:
     proc_manager.spawn(c, '/tmp/'+getpass.getuser()+'/mutilate --agentmode --threads %d' % (threads,), 'kill {pid}')

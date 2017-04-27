@@ -25,9 +25,9 @@ WORKLOADS = {
 }
 
 PATTERNS = {
-  'triangle': '--qps-function=triangle:10000:6300000:240:0',
-  'qtriangle': '--qps-function=qtriangle:700000:6300000:240:500000',
-  'sin_noise': '--qps-function=sin_noise:500000:6000000:240:250000:5',
+  'triangle': '--qps-function=triangle:10000:6200000:240:0',
+  'qtriangle': '--qps-function=qtriangle:600000:6200000:240:500000',
+  'sin_noise': '--qps-function=sin_noise:500000:5900000:240:250000:5',
 }
 
 DIR = '/tmp/' + getpass.getuser()
