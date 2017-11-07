@@ -50,7 +50,7 @@ class Clients:
     for shell in self.shells:
       channel, pid = self.proc_manager.spawn(shell, self.cmdline, self.kill)
       self.channels.append(channel)
-      channel.settimeout(5)
+      channel.settimeout(45)
 
     self.outputs = [channel.makefile('rb') for channel in self.channels]
 

@@ -8,9 +8,9 @@ import getpass
 
 import bench_common
 
-IX_PORT = 8000
+IX_PORT = 1234
 IX_MSG_SIZES = [64, 20000, 40000, 60000, 80000, 100000, 120000, 140000, 160000, 180000, 200000, 300000, 400000, 524288]
-IX_WAIT_TO_BOOT_SECS = 5
+IX_WAIT_TO_BOOT_SECS = 30
 
 DIR = '/tmp/' + getpass.getuser()
 
